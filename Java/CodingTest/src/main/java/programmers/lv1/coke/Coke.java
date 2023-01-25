@@ -28,7 +28,11 @@ public class Coke {
         return newCoke;
     }
 
-    public int otherSolution1(int a, int b, int n) {
+    public int mySolution2(int a, int b, int n) {
+        return (int) (n * b / a * (Math.pow((b / a), Math.ceil(Math.log(n) / Math.log(a / b))) - 1) / ((b / a) - 1));
+    }
+
+    public int otherSolution(int a, int b, int n) {
         return (n - b) / (a - b) * b;
     }
 }

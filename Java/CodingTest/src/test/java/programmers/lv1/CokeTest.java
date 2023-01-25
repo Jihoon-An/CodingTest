@@ -21,7 +21,6 @@ public class CokeTest {
 
         @Test
         void case1() {
-            System.out.println(1);
             assertThat(
                     coke.mySolution1(2, 1, 20)
             ).isEqualTo(19);
@@ -29,31 +28,67 @@ public class CokeTest {
 
         @Test
         void case2() {
-            System.out.println(2);
             assertThat(
                     coke.mySolution1(3, 1, 20)
             ).isEqualTo(9);
+        }
+
+        @Test
+        void case3() {
+            assertThat(
+                    coke.mySolution1(3, 1, 50)
+            ).isEqualTo(24);
         }
     }
 
     @Nested
     @DisplayName("내 솔루션 2")
-    class OtherSolution1Test {
+    class MySolution2Test {
 
         @Test
         void case1() {
-            System.out.println(3);
             assertThat(
-                    coke.otherSolution1(2, 1, 20)
+                    coke.mySolution2(2, 1, 20)
             ).isEqualTo(19);
         }
 
         @Test
         void case2() {
-            System.out.println(4);
             assertThat(
-                    coke.otherSolution1(3, 1, 20)
+                    coke.mySolution2(3, 1, 20)
             ).isEqualTo(9);
+        }
+        @Test
+        void case3() {
+            assertThat(
+                    coke.mySolution2(3, 1, 50)
+            ).isEqualTo(24);
+        }
+    }
+
+    @Nested
+    @DisplayName("다른 사람의 솔루션 1")
+    class OtherSolution1Test {
+
+        @Test
+        void case1() {
+            assertThat(
+                    coke.otherSolution(2, 1, 20)
+            ).isEqualTo(19);
+        }
+
+        @Test
+        void case2() {
+            assertThat(
+                    coke.otherSolution(3, 1, 20)
+            ).isEqualTo(9);
+        }
+
+        @Test
+        void case3() {
+            assertThat(
+                    coke.otherSolution(3, 1, 50)
+            ).isEqualTo(24);
         }
     }
 
