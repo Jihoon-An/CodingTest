@@ -1,7 +1,6 @@
 package programmers.lv1;
 
 import org.junit.jupiter.api.*;
-import programmers.lv1.coke.Coke;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -1,4 +1,4 @@
-package programmers.lv1.coke;
+package programmers.lv1;
 
 public class Coke {
 
