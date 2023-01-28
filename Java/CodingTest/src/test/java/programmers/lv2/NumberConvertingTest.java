@@ -28,6 +28,18 @@ class NumberConvertingTest {
     final int n3 = 4;
     final int result3 = -1;
 
+    //case 4
+    final int x4 = 10;
+    final int y4 = 432;
+    final int n4 = 13;
+    final int result4 = 5;
+
+    //case 5
+    final int x5 = 8;
+    final int y5 = 93;
+    final int n5 = 15;
+    final int result5 = 3;
+
     @Nested
     @DisplayName("내 솔루션 테스트")
     class MySolutionTest {
@@ -44,6 +56,16 @@ class NumberConvertingTest {
         @Test
         void case3() {
             assertThat(solution.mySolution(x3, y3, n3)).isEqualTo(result3);
+        }
+
+        @Test
+        void case4() {
+            assertThat(solution.mySolution(x4, y4, n4)).isEqualTo(result4);
+        }
+
+        @Test
+        void case5() {
+            assertThat(solution.mySolution(x5, y5, n5)).isEqualTo(result5);
         }
     }
 }
