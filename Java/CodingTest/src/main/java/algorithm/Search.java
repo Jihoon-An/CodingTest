@@ -51,15 +51,15 @@ public class Search {
                 return x;
             }
 
-            if (crtNum < key) {
-                right = crtNum - 1;
+            if (crtNum > key) {
+                right = x - 1;
 
-            }else {  // crtNUm > key
-                left = crtNum + 1;
+            }else {  // crtNUm < key
+                left = x + 1;
             }
 
             // 더 이상 탐색할 범위가 없으면 -1 리턴.
-            if (left == right || left > right) {
+            if (left > right) {
                 return -1;
             }
         }
