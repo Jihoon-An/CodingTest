@@ -2,6 +2,9 @@ src/main/resources/application.yml
 
 HELP.md
 .gradle
+.gradle/
+Java/CodingTest/.gradle
+Java/CodingTest/.gradle/
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/

@@ -1,10 +1,9 @@
 package baekjoon;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
@@ -15,22 +14,70 @@ import java.util.StringTokenizer;
  * 물이 새는 곳의 위치와, 항승이가 가지고 있는 테이프의 길이 L이 주어졌을 때, 항승이가 필요한 테이프의 최소 개수를 구하는 프로그램을 작성하시오. 테이프를 자를 수 없고, 테이프를 겹쳐서 붙이는 것도 가능하다.
  */
 public class Num1449 {
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[] A = new int[6];
-        ArrayList<Integer> arr = new ArrayList<>();
 
-        if(A[1] == 1);
-        arr.get(0)
-        // 1 2 3 4 5 6을 A 배열에 넣기
+    public static int otherSolution() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < 6; i++) {
+        int N = Integer.parseInt(st.nextToken());
+        int L = Integer.parseInt(st.nextToken());
+        int[] A = new int[N];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
-        for (int i = 0; i < 6; i++) {
-            System.out.print(A[i] + " ");
+        // 4 2
+        // 1 2 100 101
+        Arrays.sort(A);
+        int answer = 1;
+        int limit = A[0] + L - 1;
+        for (int i = 1; i < N; i++) {
+            if (A[i] > limit) {
+                answer++;
+                limit = A[i] + L - 1;
+            }
+        }
+        return answer;
+    }
+
+    public static int mySolution(int tapeLen, int[] holes) {
+
+        boolean[] holeScan = new boolean[1001];
+        for (int hole : holes) {
+            holeScan[hole] = true;
+        }
+
+        int result = 0;
+
+        for (int i = 0; i < holeScan.length; i++) {
+            if (holeScan[i]) {
+                result += 1;
+                i += (tapeLen - 1);
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        // input 1
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int N = Integer.parseInt(st.nextToken());
+        int L = Integer.parseInt(st.nextToken());
+
+        int[] A = new int[N];
+
+        // input 2
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            A[i] = Integer.parseInt(st.nextToken());
         }
 
         br.close();
+
+        System.out.println(mySolution(L, A));
     }
 }
