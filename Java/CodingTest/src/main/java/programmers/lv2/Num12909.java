@@ -31,16 +31,15 @@ public class Num12909 {
             // 문자열을 검사 "("일 경우, cnt += 1
             if (ch == '(') {
                 cnt += 1;
-            }
+            } // 문자열을 검사 ")"일 경우, cnt -= 1, cnt 가 -1이 되면 return false
+            else cnt -= 1;
 
-            // 문자열을 검사 ")"일 경우, cnt -= 1, cnt 가 -1이 되면 return false
-            cnt -= 1;
             if (cnt < 0) {
                 return false;
             }
         }
         // cnt가 0이면 return true, 아니면 return false
 
-        return cnt > 0 ? true : false;
+        return cnt == 0 ? true : false;
     }
 }
