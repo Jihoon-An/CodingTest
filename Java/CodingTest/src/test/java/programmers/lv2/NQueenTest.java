@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NQueenTest {
 
-    NQueen solution = new NQueen();
+    private NQueen solution = new NQueen();
 
-    class Case{
+    private class Case{
         int n, result;
         public Case(int n, int result) {
             this.n = n;
@@ -18,8 +18,8 @@ class NQueenTest {
         }
     }
 
-    Case case1 = new Case(4, 2);
-    Case case2 = new Case(8, 92);
+    private Case case1 = new Case(4, 2);
+    private Case case2 = new Case(8, 92);
 
     @Test
     void case1() {
