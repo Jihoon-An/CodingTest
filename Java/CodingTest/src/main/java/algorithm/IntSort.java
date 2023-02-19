@@ -2,7 +2,7 @@ package algorithm;
 
 import java.util.Scanner;
 
-public class ListSort {
+public class IntSort {
 
     // Heap정렬
     static class HeapSort {
