@@ -41,6 +41,11 @@ class IntSortTest {
         IntSort.fSort(x);
     }
 
+    @Test
+    void quickSortTest() {
+        IntSort.quickSort(x, 0, nx - 1);
+    }
+
     @AfterEach
     void afterEach() {
         System.out.println("오름차순으로 정렬했습니다.");
