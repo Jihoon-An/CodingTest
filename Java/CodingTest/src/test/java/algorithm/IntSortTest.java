@@ -10,7 +10,7 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IntSortTest {
-
+    int nx;
     int[] x;    // 정렬할 배열
 
     @BeforeEach
@@ -20,7 +20,7 @@ class IntSortTest {
 
         System.out.println("힙 정렬");
         System.out.print("요솟수 : ");
-        int nx = stdIn.nextInt();
+        nx = stdIn.nextInt();
         x = new int[nx];
 
         for (int i = 0; i < nx; i++) {
