@@ -4,8 +4,20 @@ import java.util.Scanner;
 
 public class IntSort {
 
-    // Heap정렬
-    static class HeapSort {
+    // 힙 정렬
+    static void heapSort(int[] a) {
+        int n = a.length;
+
+        for (int i = (n - 2) / 2; i >= 0; i--)
+            HeapSort.downHeap(a, i, n - 1);
+
+        for (int i = n - 1; i > 0; i--) {
+            HeapSort.swap(a, 0, i); // 가장 큰 요소와 아직 정렬되지 않은 부분의 마지막 요소를 교환.
+            HeapSort.downHeap(a, 0, i - 1); // a[0] ~ a[i-1]을 힙으로 만듬.
+        }
+    }
+
+    private static class HeapSort {
 
         static void swap(int[] a, int idx1, int idx2) {
             int t = a[idx1];
@@ -33,38 +45,30 @@ public class IntSort {
             // temp 위치 지정 (for문이 break없이 전부 실행하면, parent = child를 실행하므로 parent 위치에 temp를 넣는 것이 맞음)
             a[parent] = temp;
         }
-
-        // 힙 정렬
-        static void heapSort(int[] a, int n) {
-            for (int i = (n - 2) / 2; i >= 0; i--)
-                downHeap(a, i, n - 1);
-
-            for (int i = n - 1; i > 0; i--) {
-                swap(a, 0, i); // 가장 큰 요소와 아직 정렬되지 않은 부분의 마지막 요소를 교환.
-                downHeap(a, 0, i - 1); // a[0] ~ a[i-1]을 힙으로 만듬.
-            }
-        }
-
     }
 
-    public static void main(String[] args) {
-        Scanner stdIn = new Scanner(System.in);
+    // 도수정렬
+    static void fSort(int[] a) {
+        int n = a.length;
 
-        System.out.println("힙 정렬");
-        System.out.print("요솟수 : ");
-        int nx = stdIn.nextInt();
-        int[] x = new int[nx];
-
-        for (int i = 0; i < nx; i++) {
-            System.out.print("x[" + i + "] : ");
-            x[i] = stdIn.nextInt();
+        // 최댓값 구하기
+        int max = a[0];
+        for (int i = 1; i < n; i++) {
+            if(a[i] > max) max = a[i];
         }
 
-        HeapSort.heapSort(x, nx);
+        int[] f = new int[max + 1]; // 분포표
+        int[] b = new int[n];       // 복사용 임시 배열
 
-        System.out.println("오름차순으로 정렬했습니다.");
-        for (int i = 0; i < nx; i++) {
-            System.out.println("x[" + i + "]=" + x[i]);
-        }
+        // 도수분포표 만들기
+        for (int i = 0; i < n; i++) f[a[i]]++;
+        // 누적도수분포표 만들기
+        for (int i = 1; i <= max; i++) f[i] += f[i - 1];
+        // 목적 배열 만들기
+        for (int i = n - 1; i >= 0; i--) b[--f[a[i]]] = a[i];
+        // 배열 복사하기
+        for (int i = 0; i < n; i++) a[i] = b[i];
     }
+
+
 }
