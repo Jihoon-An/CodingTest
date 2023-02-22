@@ -21,7 +21,7 @@ class Num42748Test {
         }
     }
 
-    Case case1 = new Case(new int[]{1, 5, 2, 6, 3, 7, 4}, new int[][]{{2, 5, 3}, {4, 4, 1}, {1, 7, 3}}, new int[]{5, 6, 3});
+    private final Case case1 = new Case(new int[]{1, 5, 2, 6, 3, 7, 4}, new int[][]{{2, 5, 3}, {4, 4, 1}, {1, 7, 3}}, new int[]{5, 6, 3});
 
     @Test
     void case1() {
