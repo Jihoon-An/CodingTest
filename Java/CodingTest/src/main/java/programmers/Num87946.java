@@ -1,6 +1,7 @@
 package programmers;
 
 public class Num87946 {
+
     int len = 0;
     int max = 0;
     int k = 0;
@@ -36,7 +37,6 @@ public class Num87946 {
                     for(int j = 0; j < this.len; j++){
                         if(dungeons[arr[j] - 1][0] <= kk){
                             kk -= dungeons[arr[j] - 1][1];
-
                             cnt = j + 1;
                         }
                         else {
@@ -54,4 +54,26 @@ public class Num87946 {
             }
         }
     }
+
+    class OtherSolution {
+        public int answer = 0;
+        public boolean[] visited;
+        public int solution(int k, int[][] dungeons) {
+            visited = new boolean[dungeons.length];
+            dfs(k, 0, dungeons);
+            return answer;
+        }
+
+        public void dfs(int k, int count, int[][] dungeons) {
+            answer = Math.max(answer, count);
+            for (int i = 0; i < dungeons.length; i++) {
+                if (!visited[i] && k >= dungeons[i][0]) {
+                    visited[i] = true;
+                    dfs(k - dungeons[i][1], count + 1, dungeons);
+                    visited[i] = false;
+                }
+            }
+        }
+    }
 }
+
