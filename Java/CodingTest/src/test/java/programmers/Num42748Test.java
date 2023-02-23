@@ -1,9 +1,8 @@
-package programmers.lv1;
+package programmers;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import programmers.Num42748;
 
 class Num42748Test {
 

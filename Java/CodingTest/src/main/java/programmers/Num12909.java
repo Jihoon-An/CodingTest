@@ -1,4 +1,4 @@
-package programmers.lv2;
+package programmers;
 
 /**
  * <h1>올바른 괄호</h1>

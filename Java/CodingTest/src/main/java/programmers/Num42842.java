@@ -1,4 +1,4 @@
-package programmers.lv2;
+package programmers;
 
 public class Num42842 {
     public int[] solution(int brown, int yellow) {

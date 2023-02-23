@@ -1,4 +1,4 @@
-package programmers.lv2;
+package programmers;
 
 public class NQueen {
     boolean[] rowCheck, diagonalCheck1, diagonalCheck2;

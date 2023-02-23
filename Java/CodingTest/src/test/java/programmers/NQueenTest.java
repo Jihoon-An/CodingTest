@@ -1,10 +1,9 @@
-package programmers.lv2;
+package programmers;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import programmers.NQueen;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class NQueenTest {
 
