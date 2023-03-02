@@ -52,7 +52,7 @@ public class Num154539 {
                     break;
                 }
             }
-            
+
             s.push(i);
         }
 
